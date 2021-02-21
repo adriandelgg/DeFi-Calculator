@@ -1,0 +1,50 @@
+{
+  "binancecoin": {
+    "usd": 275.22
+  },
+  "swipe": {
+    "usd": 3.08
+  },
+  "litecoin": {
+    "usd": 228.08
+  },
+  "usd-coin": {
+    "usd": 1.01
+  },
+  "tether": {
+    "usd": 1.01
+  },
+  "binance-usd": {
+    "usd": 1.01
+  },
+  "filecoin": {
+    "usd": 43.49
+  },
+  "chainlink": {
+    "usd": 34.28
+  },
+  "bitcoin": {
+    "usd": 56362
+  },
+  "ethereum": {
+    "usd": 1942.71
+  },
+  "ripple": {
+    "usd": 0.524584
+  },
+  "polkadot": {
+    "usd": 39.36
+  },
+  "bitcoin-cash": {
+    "usd": 682.6
+  },
+  "binance-eth": {
+    "usd": 1918.96
+  },
+  "dai": {
+    "usd": 1
+  },
+  "venus": {
+    "usd": 73.52
+  }
+}
