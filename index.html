@@ -5,10 +5,418 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <title>Liquidation Calculator</title>
 </head>
 <body>
-    <p>Powered by CoinGecko API</p>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Liquidation Calculator</h1>
+        <!-- Totals -->
+        <div class="total-amounts flex">
+            <div class="supply-balance">
+                <h2>Supply balance</h2>
+                <h3>$100,000</h3>
+            </div>
+            <div class="available-credit">
+                <h2>Available Credit</h2>
+                <h3>$80,000</h3>
+                <h2>Liquid Event</h2>
+                <!-- Percentage Bar -->
+                <p>60%</p>
+            </div>
+            <div class="borrow-balance">
+                <h2>Borrow Balance</h2>
+                <h3>$50,000</h3>
+            </div>
+        </div> 
+        
+        <!-- Calculator -->
+        <div class="calculator">
+            <div class="supply calc-containers">
+               <h2>Supply</h2>
+                <div class="descriptions">
+                    <div class="bitcoin-supply coin-flex">
+                        <img src="./img/BTCB.png" alt="" height="55px">
+                        <p>BTC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: $0 </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="swipe-supply coin-flex">
+                        <img src="./img/SXP.png" alt="" height="55px">
+                        <p>SXP</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="venus-supply coin-flex">
+                        <img src="./img/XVS.png" alt="" height="55px">
+                        <p>XVS</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="usdc-supply coin-flex">
+                        <img src="./img/USDC.png" alt="" height="55px">
+                        <p>USDC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="tether-supply coin-flex">
+                        <img src="./img/USDT.png" alt="" height="55px">
+                        <p>USDT</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceUsd-supply coin-flex">
+                        <img src="./img/BUSD.png" alt="" height="55px">
+                        <p>BUSD</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="ethereum-supply coin-flex">
+                        <img src="./img/ETH.png" alt="" height="55px">
+                        <p>ETH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="litecoin-supply coin-flex">
+                        <img src="./img/LTC.png" alt="" height="55px">
+                        <p>LTC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="ripple-supply coin-flex">
+                        <img src="./img/XRP.png" alt="" height="55px">
+                        <p>XRP</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="bitcoinCash-supply coin-flex">
+                        <img src="./img/BCH.png" alt="" height="55px">
+                        <p>BCH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="polkadot-supply coin-flex">
+                        <img src="./img/DOT.png" alt="" height="55px">
+                        <p>DOT</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="chainlink-supply coin-flex">
+                        <img src="./img/LINK.png" alt="" height="55px">
+                        <p>LINK</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="dai-supply coin-flex">
+                        <img src="./img/DAI.png" alt="" height="55px">
+                        <p>DAI</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="filecoin-supply coin-flex">
+                        <img src="./img/FIL.png" alt="" height="55px">
+                        <p>FIL</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceCoin-supply coin-flex">
+                        <img src="./img/BNB.png" alt="" height="55px">
+                        <p>BNB</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceEth-supply coin-flex">
+                        <img src="./img/BETH.png" alt="" height="55px">
+                        <p>BETH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="cardano-supply coin-flex">
+                        <img src="./img/ADA.png" alt="" height="50px">
+                        <p>ADA</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="vai-supply coin-flex">
+                        <img src="./img/VAI.png" alt="" height="45px">
+                        <p>VAI</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="borrow calc-containers">
+                <h2>Borrow</h2>
+                <div class="descriptions">
+                    <div class="bitcoin-supply coin-flex">
+                        <img src="./img/BTCB.png" alt="" height="55px">
+                        <p>BTC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="swipe-supply coin-flex">
+                        <img src="./img/SXP.png" alt="" height="55px">
+                        <p>SXP</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="venus-supply coin-flex">
+                        <img src="./img/XVS.png" alt="" height="55px">
+                        <p>XVS</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="usdc-supply coin-flex">
+                        <img src="./img/USDC.png" alt="" height="55px">
+                        <p>USDC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="tether-supply coin-flex">
+                        <img src="./img/USDT.png" alt="" height="55px">
+                        <p>USDT</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceUsd-supply coin-flex">
+                        <img src="./img/BUSD.png" alt="" height="55px">
+                        <p>BUSD</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="ethereum-supply coin-flex">
+                        <img src="./img/ETH.png" alt="" height="55px">
+                        <p>ETH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="litecoin-supply coin-flex">
+                        <img src="./img/LTC.png" alt="" height="55px">
+                        <p>LTC</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="ripple-supply coin-flex">
+                        <img src="./img/XRP.png" alt="" height="55px">
+                        <p>XRP</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="bitcoinCash-supply coin-flex">
+                        <img src="./img/BCH.png" alt="" height="55px">
+                        <p>BCH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="polkadot-supply coin-flex">
+                        <img src="./img/DOT.png" alt="" height="55px">
+                        <p>DOT</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="chainlink-supply coin-flex">
+                        <img src="./img/LINK.png" alt="" height="55px">
+                        <p>LINK</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="dai-supply coin-flex">
+                        <img src="./img/DAI.png" alt="" height="55px">
+                        <p>DAI</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="filecoin-supply coin-flex">
+                        <img src="./img/FIL.png" alt="" height="55px">
+                        <p>FIL</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceCoin-supply coin-flex">
+                        <img src="./img/BNB.png" alt="" height="55px">
+                        <p>BNB</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="binanceEth-supply coin-flex">
+                        <img src="./img/BETH.png" alt="" height="55px">
+                        <p>BETH</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="cardano-supply coin-flex">
+                        <img src="./img/ADA.png" alt="" height="50px">
+                        <p>ADA</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                    <div class="vai-supply coin-flex">
+                        <img src="./img/VAI.png" alt="" height="45px">
+                        <p>VAI</p>
+                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <div class="total-coin-price">
+                            <p>Total: </p>
+                            <hr>
+                            <p>Coin Price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    
+    <footer>
+        <hr>
+        <p>Powered by CoinGecko API</p>
+    </footer>
 </body>
 </html>

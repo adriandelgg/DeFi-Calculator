@@ -1,0 +1,108 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #090d27;
+    color: #fff;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 90%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    /* font-size: 2rem; */
+    text-align: center;
+}
+
+h3 {
+
+}
+
+.flex {
+    display: flex;
+    background-color: #181c3a;
+    border-radius: 30px;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+/* Header */
+
+
+
+/* Main */
+
+.total-amounts {
+    text-align: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 3em;
+    margin: 2em 0;
+    align-items: baseline;
+}
+
+.total-amounts h2 {
+    /* padding-top: .5em; */
+    font-size: 2rem;
+}
+
+.total-amounts h3 {
+    font-size: 1.7rem;
+}
+
+.available-credit {
+    background: linear-gradient(rgb(242, 194, 101), rgb(247, 180, 79));
+    border-radius: 30px;
+    padding: 1.5em 5em;
+}
+
+
+.supply-balance h2 {
+    font-size: 2rem;
+}
+
+/* Calculator */
+
+.coin-flex {
+    display: flex;
+    background-color: #181c3a;
+    border-radius: 30px;
+    align-items: center;
+    /* border: 1px solid white; */
+    justify-content: space-around;
+    margin: .5em 0;
+}
+
+.calc-containers {
+    width: 49%;
+    background-color: #181c3a;
+    border-radius: 30px;
+    padding: 2em 0;
+}
+
+.calc-containers h2 {
+    padding-bottom: 1em;
+}
+
+.supply {
+    
+}
+
+.borrow {
+    
+}
+
+.calculator {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Footer */
