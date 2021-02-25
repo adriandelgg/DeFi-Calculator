@@ -20,205 +20,206 @@
         <!-- Totals -->
         <div class="total-amounts flex">
             <div class="supply-balance">
-                <h2>Supply balance</h2>
-                <h3>$100,000</h3>
+                <h2>Supply Balance</h2>
+                <h3 id="total-supply">$0</h3>
             </div>
             <div class="available-credit">
                 <h2>Available Credit</h2>
                 <h3>$80,000</h3>
-                <h2>Liquid Event</h2>
+                <h2>Liquidation Event</h2>
                 <!-- Percentage Bar -->
-                <p>60%</p>
+                <p>$10,000</p>
+                <p>(Bar) 60%</p>
             </div>
             <div class="borrow-balance">
                 <h2>Borrow Balance</h2>
-                <h3>$50,000</h3>
+                <h3 id="total-borrow">$0</h3>
             </div>
-        </div> 
+        </div>
         
         <!-- Calculator -->
         <div class="calculator">
             <div class="supply calc-containers">
                <h2>Supply</h2>
-                <div class="descriptions">
+                <div id="supply-side" class="descriptions">
                     <div class="bitcoin-supply coin-flex">
                         <img src="./img/BTCB.png" alt="" height="55px">
-                        <p>BTC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="bitcoin">BTC</label>
+                        <input class="bitcoin" type="text" name="bitcoin" size="10" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: $0 </p>
+                            <p class="bitcointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="bitcoinprice"></p>
                         </div>
                     </div>
                     <div class="swipe-supply coin-flex">
                         <img src="./img/SXP.png" alt="" height="55px">
-                        <p>SXP</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="swipe">SXP</label>
+                        <input class="swipe" class="coin-supply" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="swipetotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="swipeprice"></p>
                         </div>
                     </div>
                     <div class="venus-supply coin-flex">
                         <img src="./img/XVS.png" alt="" height="55px">
-                        <p>XVS</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="venus">XVS</label>
+                        <input class="venus" class="coin-supply" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="venustotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="venusprice"></p>
                         </div>
                     </div>
                     <div class="usdc-supply coin-flex">
                         <img src="./img/USDC.png" alt="" height="55px">
-                        <p>USDC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="usd-coin">USDC</label>
+                        <input class="usd-coin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="usd-cointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="usd-coinprice"></p>
                         </div>
                     </div>
                     <div class="tether-supply coin-flex">
                         <img src="./img/USDT.png" alt="" height="55px">
-                        <p>USDT</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="tether">USDT</label>
+                        <input class="tether" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="tethertotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="tetherprice"></p>
                         </div>
                     </div>
-                    <div class="binanceUsd-supply coin-flex">
+                    <div class="binanceusd-supply coin-flex">
                         <img src="./img/BUSD.png" alt="" height="55px">
-                        <p>BUSD</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="binance-usd">BUSD</label>
+                        <input class="binance-usd" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binance-usdtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binance-usdprice"></p>
                         </div>
                     </div>
                     <div class="ethereum-supply coin-flex">
                         <img src="./img/ETH.png" alt="" height="55px">
-                        <p>ETH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="ethereum">ETH</label>
+                        <input class="ethereum" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="ethereumtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="ethereumprice"></p>
                         </div>
                     </div>
                     <div class="litecoin-supply coin-flex">
                         <img src="./img/LTC.png" alt="" height="55px">
-                        <p>LTC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="litecoin">LTC</label>
+                        <input class="litecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="litecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="litecoinprice"></p>
                         </div>
                     </div>
                     <div class="ripple-supply coin-flex">
                         <img src="./img/XRP.png" alt="" height="55px">
-                        <p>XRP</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="ripple">XRP</label>
+                        <input class="ripple" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="rippletotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="rippleprice"></p>
                         </div>
                     </div>
-                    <div class="bitcoinCash-supply coin-flex">
+                    <div class="bitcoincash-supply coin-flex">
                         <img src="./img/BCH.png" alt="" height="55px">
-                        <p>BCH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="bitcoin-cash">BCH</label>
+                        <input class="bitcoin-cash" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="bitcoin-cashtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="bitcoin-cashprice"></p>
                         </div>
                     </div>
                     <div class="polkadot-supply coin-flex">
                         <img src="./img/DOT.png" alt="" height="55px">
-                        <p>DOT</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="polkadot">DOT</label>
+                        <input class="polkadot" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="polkadottotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="polkadotprice"></p>
                         </div>
                     </div>
                     <div class="chainlink-supply coin-flex">
                         <img src="./img/LINK.png" alt="" height="55px">
-                        <p>LINK</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="chainlink">LINK</label>
+                        <input class="chainlink" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="chainlinktotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="chainlinkprice"></p>
                         </div>
                     </div>
                     <div class="dai-supply coin-flex">
                         <img src="./img/DAI.png" alt="" height="55px">
-                        <p>DAI</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="dai">DAI</label>
+                        <input class="dai" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="daitotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="daiprice"></p>
                         </div>
                     </div>
                     <div class="filecoin-supply coin-flex">
                         <img src="./img/FIL.png" alt="" height="55px">
-                        <p>FIL</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="filecoin">FIL</label>
+                        <input class="filecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="filecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="filecoinprice"></p>
                         </div>
                     </div>
-                    <div class="binanceCoin-supply coin-flex">
+                    <div class="binancecoin-supply coin-flex">
                         <img src="./img/BNB.png" alt="" height="55px">
-                        <p>BNB</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="binancecoin">BNB</label>
+                        <input class="binancecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binancecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binancecoinprice"></p>
                         </div>
                     </div>
-                    <div class="binanceEth-supply coin-flex">
+                    <div class="binanceeth-supply coin-flex">
                         <img src="./img/BETH.png" alt="" height="55px">
-                        <p>BETH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="binance-eth">BETH</label>
+                        <input class="binance-eth" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binance-ethtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binance-ethprice"></p>
                         </div>
                     </div>
                     <div class="cardano-supply coin-flex">
                         <img src="./img/ADA.png" alt="" height="50px">
-                        <p>ADA</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="cardano">ADA</label>
+                        <input class="cardano" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="cardanototal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="cardanoprice"></p>
                         </div>
                     </div>
                     <div class="vai-supply coin-flex">
                         <img src="./img/VAI.png" alt="" height="45px">
-                        <p>VAI</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="vai">VAI</label>
+                        <input class="vai" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="vaitotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="vaiprice"></p>
                         </div>
                     </div>
                 </div>
@@ -226,185 +227,185 @@
 
             <div class="borrow calc-containers">
                 <h2>Borrow</h2>
-                <div class="descriptions">
+                <div id="borrow-side" class="descriptions">
                     <div class="bitcoin-supply coin-flex">
                         <img src="./img/BTCB.png" alt="" height="55px">
-                        <p>BTC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">BTC</label>
+                        <input class="bitcoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="bitcointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="bitcoinprice"></p>
                         </div>
                     </div>
                     <div class="swipe-supply coin-flex">
                         <img src="./img/SXP.png" alt="" height="55px">
-                        <p>SXP</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">SXP</label>
+                        <input class="swipe" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="swipetotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="swipeprice"></p>
                         </div>
                     </div>
                     <div class="venus-supply coin-flex">
                         <img src="./img/XVS.png" alt="" height="55px">
-                        <p>XVS</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">XVS</label>
+                        <input class="venus" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="venustotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="venusprice"></p>
                         </div>
                     </div>
                     <div class="usdc-supply coin-flex">
                         <img src="./img/USDC.png" alt="" height="55px">
-                        <p>USDC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">USDC</label>
+                        <input class="usd-coin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="usd-cointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="usd-coinprice"></p>
                         </div>
                     </div>
                     <div class="tether-supply coin-flex">
                         <img src="./img/USDT.png" alt="" height="55px">
-                        <p>USDT</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">USDT</label>
+                        <input class=tether type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="tethertotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="tetherprice"></p>
                         </div>
                     </div>
                     <div class="binanceUsd-supply coin-flex">
                         <img src="./img/BUSD.png" alt="" height="55px">
-                        <p>BUSD</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">BUSD</label>
+                        <input class="binance-usd" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binance-usdtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binance-usdprice"></p>
                         </div>
                     </div>
                     <div class="ethereum-supply coin-flex">
                         <img src="./img/ETH.png" alt="" height="55px">
-                        <p>ETH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">ETH</label>
+                        <input class="ethereum" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="ethereumtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="ethereumprice"></p>
                         </div>
                     </div>
                     <div class="litecoin-supply coin-flex">
                         <img src="./img/LTC.png" alt="" height="55px">
-                        <p>LTC</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">LTC</label>
+                        <input class="litecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="litecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="litecoinprice"></p>
                         </div>
                     </div>
                     <div class="ripple-supply coin-flex">
                         <img src="./img/XRP.png" alt="" height="55px">
-                        <p>XRP</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">XRP</label>
+                        <input class="ripple" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="rippletotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="rippleprice"></p>
                         </div>
                     </div>
                     <div class="bitcoinCash-supply coin-flex">
                         <img src="./img/BCH.png" alt="" height="55px">
-                        <p>BCH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">BCH</label>
+                        <input class="bitcoin-cash" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="bitcoin-cashtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="bitcoin-cashprice"></p>
                         </div>
                     </div>
                     <div class="polkadot-supply coin-flex">
                         <img src="./img/DOT.png" alt="" height="55px">
-                        <p>DOT</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">DOT</label>
+                        <input class="polkadot" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="polkadottotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="polkadotprice"></p>
                         </div>
                     </div>
                     <div class="chainlink-supply coin-flex">
                         <img src="./img/LINK.png" alt="" height="55px">
-                        <p>LINK</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">LINK</label>
+                        <input class="chainlink" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="chainlinktotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="chainlinkprice"></p>
                         </div>
                     </div>
                     <div class="dai-supply coin-flex">
                         <img src="./img/DAI.png" alt="" height="55px">
-                        <p>DAI</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">DAI</label>
+                        <input class="dai" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="daitotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="daiprice"></p>
                         </div>
                     </div>
                     <div class="filecoin-supply coin-flex">
                         <img src="./img/FIL.png" alt="" height="55px">
-                        <p>FIL</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">FIL</label>
+                        <input class="filecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="filecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="filecoinprice"></p>
                         </div>
                     </div>
-                    <div class="binanceCoin-supply coin-flex">
+                    <div class="binancecoin-supply coin-flex">
                         <img src="./img/BNB.png" alt="" height="55px">
-                        <p>BNB</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">BNB</label>
+                        <input class="binancecoin" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binancecointotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binancecoinprice"></p>
                         </div>
                     </div>
                     <div class="binanceEth-supply coin-flex">
                         <img src="./img/BETH.png" alt="" height="55px">
-                        <p>BETH</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">BETH</label>
+                        <input class="binance-eth" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="binance-ethtotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="binance-ethprice"></p>
                         </div>
                     </div>
                     <div class="cardano-supply coin-flex">
                         <img src="./img/ADA.png" alt="" height="50px">
-                        <p>ADA</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">ADA</label>
+                        <input class="cardano" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="cardanototal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="cardanoprice"></p>
                         </div>
                     </div>
                     <div class="vai-supply coin-flex">
                         <img src="./img/VAI.png" alt="" height="45px">
-                        <p>VAI</p>
-                        <input id="" type="text" name="" placeholder="Enter amount..">
+                        <label for="">VAI</label>
+                        <input class="vai" type="text" name="" placeholder="Enter amount..">
                         <div class="total-coin-price">
-                            <p>Total: </p>
+                            <p class="vaitotal">Total: $0</p>
                             <hr>
-                            <p>Coin Price</p>
+                            <p class="vaiprice"></p>
                         </div>
                     </div>
                 </div>
@@ -416,7 +417,7 @@
     
     <footer>
         <hr>
-        <p>Powered by CoinGecko API</p>
+        <label for="">Powered by CoinGecko API</label>
     </footer>
 </body>
 </html>
