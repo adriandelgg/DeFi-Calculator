@@ -31,12 +31,39 @@ h3 {
     background-color: #181c3a;
     border-radius: 30px;
     align-items: center;
-    /* border: 1px solid white; */
 }
 
 /* Header */
 
+header {
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+    height: 5em;
+}
 
+.nav-links {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	list-style-type: none;
+    width: 50%;
+}
+
+.nav-link {
+	font-size: 1.2rem;
+    margin-left: 3em;
+}
+
+.nav-link a {
+	text-decoration: none;
+    color: white;
+}
+
+.nav-link a:hover {
+	color:rgb(195, 23, 195);
+	transition: color .3s;
+}
 
 /* Main */
 
@@ -58,7 +85,7 @@ h3 {
     font-size: 1.7rem;
 }
 
-.available-credit {
+.middle-totals {
     background: linear-gradient(rgb(242, 194, 101), rgb(247, 180, 79));
     border-radius: 30px;
     padding: 1.5em 5em;
@@ -82,7 +109,7 @@ h3 {
 }
 
 .calc-containers {
-    width: 49%;
+    width: 38.3%;
     background-color: #181c3a;
     border-radius: 30px;
     padding: 2em 0;
@@ -103,6 +130,13 @@ h3 {
 .calculator {
     display: flex;
     justify-content: space-between;
+}
+
+.asset-liquid {
+    width: 20%;
+    background-color: #181c3a;
+    border-radius: 30px;
+    padding: 2em 0;
 }
 
 /* Footer */

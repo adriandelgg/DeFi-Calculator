@@ -7,7 +7,6 @@ async function getData() {
         const response = await fetch(allCoinsUrl);
         if (response.ok) {
             const jsonResponse = await response.json();
-            console.log(jsonResponse)
             return jsonResponse;
         }
         throw new Error('Request failed!');
@@ -21,6 +20,20 @@ async function getCoinPrice(coin) {
     const jsonObject = await getData();
     return jsonObject[coin].usd;
 }
+
+// Gives all coins their current price when page loads
+const startingCoinPrices = coinAPI => {
+    coinAPI
+        .then(prices => {
+            for (const coin in prices) {
+                const priceHtmlForSupplyCoins = document.getElementById('supply-side').querySelector(`.${coin}price`);
+                const priceHtmlForBorrowCoins = document.getElementById('borrow-side').querySelector(`.${coin}price`);
+                priceHtmlForSupplyCoins.innerHTML = '$' + prices[coin].usd.toLocaleString('en');
+                priceHtmlForBorrowCoins.innerHTML = '$' + prices[coin].usd.toLocaleString('en');
+            }
+        });
+}
+startingCoinPrices(getData());
 
 // Calculates & changes the HTML for Total & Current Price of Supply and Borrow Sides
 const calculateTotalForSupplyBorrow = (e, side) => {
@@ -50,7 +63,6 @@ const calculateTotalForSupplyBorrow = (e, side) => {
 // Gets input value of all inputs on Supply side
 const supplySide = document.getElementById('supply-side').getElementsByTagName("input");
 for (let i = 0; i < supplySide.length; i++) {
-    
     supplySide[i].onchange = e => calculateTotalForSupplyBorrow(e, 'supply'); 
 }
 
@@ -62,8 +74,10 @@ for (let i = 0; i < borrowSide.length; i++) {
 
 // Calculates the total Supply & Borrow Balance
 const totalSupply = side => {
+    let supplyTotal = 0;
+    let borrowTotal = 0;
+    
     if (side === 'supply') {
-        let supplyTotal = 0;
         total = getData()
             .then(json => {
                 for (let i = 0; i < supplySide.length; i++) {
@@ -74,11 +88,12 @@ const totalSupply = side => {
                     }
                 }
                 document.getElementById('total-supply').innerHTML = '$' + supplyTotal.toLocaleString('en');
-                console.log(supplyTotal);
+                availableCredit(supplyTotal);
+                // amountUsedOfAvailableCredit(supplyTotal, 1);
+                percentageUsedOfAc();
             });
     
     } else if (side === 'borrow') {
-        let borrowTotal = 0;
         total = getData()
             .then(json => {
                 for (let i = 0; i < borrowSide.length; i++) {
@@ -89,7 +104,55 @@ const totalSupply = side => {
                     }
                 }
                 document.getElementById('total-borrow').innerHTML = '$' + borrowTotal.toLocaleString('en');
-                console.log(borrowTotal);
+                // amountUsedOfAvailableCredit(borrowTotal, 2);
+                percentageUsedOfAc();
             });
+    }
+    return borrowTotal;
+};
+
+const availableCredit = supplyTotal => {
+    const creditAvailable = document.getElementById('available-credit');
+    creditAvailable.innerHTML = '$' + (supplyTotal * 0.8).toLocaleString('en');
+};
+
+
+const amountUsedOfAvailableCredit = (total, numOfWhich) => {
+    const amountUsedOfCredit = document.getElementById('amount-used-ac');
+    let creditAvailable = document.getElementById('available-credit');
+    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','')); // Takes Available Credit amount & converts to a number
+    let borrowTotal = document.getElementById('total-borrow');
+    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$',''));
+    
+
+    if (numOfWhich === 2) {
+        if (creditAvailable.innerHTML == '' || creditAvailable.innerHTML == 0) {
+            console.log('none');
+        } else {
+            
+            amountUsedOfCredit.innerHTML = (total / creditAvailable) * 100 + '%';
+        }
+        
+    
+    } else {
+        
+        console.log(creditAvailable);
+        console.log(borrowTotal);
+        amountUsedOfCredit.innerHTML = (borrowTotal / creditAvailable) * 100 + '%';
+    }
+}
+
+function percentageUsedOfAc() {
+    const amountUsedOfCredit = document.getElementById('amount-used-ac'); // Percentage Amount
+    let creditAvailable = document.getElementById('available-credit'); // Total Credit Available Number
+    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','')); // Takes Available Credit amount & converts to a number
+    let borrowTotal = document.getElementById('total-borrow');
+    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$',''));
+    
+
+    if (borrowTotal != 0 && creditAvailable > borrowTotal) {
+        amountUsedOfCredit.innerHTML = (borrowTotal / creditAvailable) * 100 + '%';
+    } else {
+        // Make borrow balance red and say "Borrow Balance can NOT exceed available credit!"
     }
 }
