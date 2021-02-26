@@ -127,11 +127,12 @@ function calcPercentageUsedOfAvailableCredit() {
     
     if (borrowTotal !== 0 && creditAvailable !== 0) { // Checks to make sure 0 / 0 is NOT NaN
 
-        const amountUsedTotal = Math.round( ((borrowTotal / creditAvailable) * 100) * 1000) / 1000; // Amount Used of Available Credit in %
+        const amountUsedTotalRounded = Math.round( ((borrowTotal / creditAvailable) * 100) * 1000) / 1000; // Amount Used of Available Credit in %
+        const amountUsedTotal = (borrowTotal / creditAvailable) * 100;
 
         // Adds AC % and reverts back to default if else error below was triggered
         if (borrowTotal != 0 && creditAvailable > borrowTotal) {
-            amountUsedOfCredit.innerHTML = amountUsedTotal + '%';
+            amountUsedOfCredit.innerHTML = amountUsedTotalRounded + '%';
             // borrowBalanceText[0].innerHTML = "Borrow Balance";
             // borrowBalanceText[0].classList.remove('borrow-balance-error');
             // borrowBalanceText[1].style.color = '';
@@ -176,7 +177,7 @@ const calcAssetLiquidationPrice = amountUsedOfAvailableCredit => {
 
 const borrowBalanceExceedsAvailableCreditError = num => {
     const borrowBalanceText = document.getElementsByClassName('borrow-balance-text');
-    const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
+    // const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
     if (num === 1) {
         borrowBalanceText[0].innerHTML = "Borrow Balance";
         borrowBalanceText[0].classList.remove('borrow-balance-error');
