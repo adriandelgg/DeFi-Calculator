@@ -128,7 +128,7 @@ function calcPercentageUsedOfAvailableCredit() {
     if (borrowTotal !== 0 && creditAvailable !== 0) { // Checks to make sure 0 / 0 is NOT NaN
 
         const amountUsedTotalRounded = Math.round( ((borrowTotal / creditAvailable) * 100) * 1000) / 1000; // Amount Used of Available Credit in %
-        const amountUsedTotal = (borrowTotal / creditAvailable) * 100;
+        const amountUsedTotal = borrowTotal / creditAvailable;
 
         // Adds AC % and reverts back to default if else error below was triggered
         if (borrowTotal != 0 && creditAvailable > borrowTotal) {
