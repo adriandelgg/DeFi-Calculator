@@ -88,9 +88,8 @@ const totalSupply = side => {
                     }
                 }
                 document.getElementById('total-supply').innerHTML = '$' + supplyTotal.toLocaleString('en');
-                availableCredit(supplyTotal);
-                // amountUsedOfAvailableCredit(supplyTotal, 1);
-                percentageUsedOfAc();
+                calculateAvailableCredit(supplyTotal);
+                calcPercentageUsedOfAvailableCredit();
             });
     
     } else if (side === 'borrow') {
@@ -104,55 +103,62 @@ const totalSupply = side => {
                     }
                 }
                 document.getElementById('total-borrow').innerHTML = '$' + borrowTotal.toLocaleString('en');
-                // amountUsedOfAvailableCredit(borrowTotal, 2);
-                percentageUsedOfAc();
+                calcPercentageUsedOfAvailableCredit();
             });
     }
     return borrowTotal;
 };
 
-const availableCredit = supplyTotal => {
+
+// Calculates Total Available Credit
+const calculateAvailableCredit = supplyTotal => {
     const creditAvailable = document.getElementById('available-credit');
-    creditAvailable.innerHTML = '$' + (supplyTotal * 0.8).toLocaleString('en');
+    creditAvailable.innerHTML = '$' + (supplyTotal * 0.6).toLocaleString('en');
 };
 
-
-const amountUsedOfAvailableCredit = (total, numOfWhich) => {
-    const amountUsedOfCredit = document.getElementById('amount-used-ac');
-    let creditAvailable = document.getElementById('available-credit');
-    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','')); // Takes Available Credit amount & converts to a number
-    let borrowTotal = document.getElementById('total-borrow');
-    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$',''));
-    
-
-    if (numOfWhich === 2) {
-        if (creditAvailable.innerHTML == '' || creditAvailable.innerHTML == 0) {
-            console.log('none');
-        } else {
-            
-            amountUsedOfCredit.innerHTML = (total / creditAvailable) * 100 + '%';
-        }
-        
-    
-    } else {
-        
-        console.log(creditAvailable);
-        console.log(borrowTotal);
-        amountUsedOfCredit.innerHTML = (borrowTotal / creditAvailable) * 100 + '%';
-    }
-}
-
-function percentageUsedOfAc() {
+// Calculates the Percentage used of Total Available Credit
+function calcPercentageUsedOfAvailableCredit() {
     const amountUsedOfCredit = document.getElementById('amount-used-ac'); // Percentage Amount
     let creditAvailable = document.getElementById('available-credit'); // Total Credit Available Number
-    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','')); // Takes Available Credit amount & converts to a number
     let borrowTotal = document.getElementById('total-borrow');
-    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$',''));
+    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','').replace(',','')); // Takes Available Credit amount & converts to a float
+    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$','').replace(',',''));// Turns Borrow Balance to a float
     
+    const amountUsedTotal = (borrowTotal / creditAvailable) * 100;
 
     if (borrowTotal != 0 && creditAvailable > borrowTotal) {
-        amountUsedOfCredit.innerHTML = (borrowTotal / creditAvailable) * 100 + '%';
+        amountUsedOfCredit.innerHTML = amountUsedTotal + '%';
     } else {
         // Make borrow balance red and say "Borrow Balance can NOT exceed available credit!"
+        // Remove Available Credit & it's percentage
     }
+    calcLiquidationEventAmount(borrowTotal, amountUsedTotal);
+}
+
+const calcLiquidationEventAmount = (borrowTotal,amountUsedOfAvailableCredit) => {
+    let liquidEvent = document.getElementById('liquid-event');
+    liquidEvent.innerHTML = '$' + (borrowTotal / 0.6).toLocaleString('en');
+
+    let liquidPercentage = document.getElementById('liquid-percent');
+    liquidPercentage.innerHTML = 1 - amountUsedOfAvailableCredit;
+
+    calcAssetLiquidationPrice(amountUsedOfAvailableCredit);
+};
+
+const calcAssetLiquidationPrice = amountUsedOfAvailableCredit => {
+    const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
+    getData()
+        .then(prices => {
+            console.log(prices);
+            for (let i = 0; i < assetLiquid.length; i++) {
+                for (const coin in prices) {
+                    console.log(assetLiquid[i].className);
+                    if (assetLiquid[i].className.includes(coin)) {
+                        console.group(assetLiquid[i], coin);
+                        assetLiquid[i].innerHTML = amountUsedOfAvailableCredit * prices[coin].usd;
+                    }
+                    // Still have to figure out that if the number is 0 on either side then it won't show a number
+                }
+            }
+        });
 }

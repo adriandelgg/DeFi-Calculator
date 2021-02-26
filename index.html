@@ -39,8 +39,8 @@
                 <p id="amount-used-ac"></p>
                 <h2>Liquidation Event</h2>
                 <!-- Percentage Bar -->
-                <p id="liquid-event">$10,000</p>
-                <p id="percent-of-liquid-event">60%</p>
+                <p id="liquid-event">$0</p>
+                <p id="liquid-percent">0%</p>
                 <p id="other-liquid"></p>
             </div>
             <div class="borrow-balance">
@@ -51,8 +51,11 @@
         
         <!-- Calculator -->
         <section class="calculator">
+            <div class="ads">
+                <!-- Google Ad -->
+            </div>
             <div class="supply calc-containers">
-               <h2>Supply</h2>
+                <h2>Supply</h2>
                 <div id="supply-side" class="descriptions">
                     <div class="bitcoin-supply coin-flex">
                         <img src="./img/BTCB.png" alt="" height="55px">
@@ -237,81 +240,81 @@
                 </div>
             </div>
             
-            <div class="asset-liquid">
+            <div id="asset-liquid">
                 <h2>Liquidation Price <br>Per Coin</h2>
                 <div class="bitcoin-liquid coin-flex">
                     <p>BTC</p>
                     <!-- <img src="./img/BTCB.png" alt="" height="45px"> -->
-                    <p>$12.21</p>
+                    <p class="liquid-coin-price bitcoin">$0</p>
                 </div>
                 <div class="swipe-liquid coin-flex">
                     <p>SXP</p>
                     <!-- <img src="./img/SXP.png" alt="" height="45px"> -->
-                    <p>32%</p>
+                    <p class="liquid-coin-price swipe">$0</p>
                 </div>
                 <div class="venus-liquid coin-flex">
                     <p>XVS</p>
-                    <p>32%</p>
+                    <p class="liquid-coin-price venus">$0</p>
                 </div>
                 <div class="usdc-liquid coin-flex">
                     <p>USDC</p>
-                    <p>32%</p>
+                    <p class="liquid-coin-price usd-coin">$0</p>
                 </div>
                 <div class="tether-liquid coin-flex">
                     <p>USDT</p>
-                    <p>32%</p>
+                    <p class="liquid-coin-price tether">$0</p>
                 </div>
                 <div class="binanceusd-liquid coin-flex">
                     <p>BUSD</p>
-                    <p>32%</p>
+                    <p class="binance-usd liquid-coin-price">$0</p>
                 </div>
                 <div class="ethereum-liquid coin-flex">
                     <p>ETH</p>
-                    <p>32%</p>
+                    <p class="ethereum liquid-coin-price">$0</p>
                 </div>
                 <div class="litecoin-liquid coin-flex">
                     <p>LTC</p>
-                    <p>32%</p>
+                    <p class="litecoin liquid-coin-price">$0</p>
                 </div>
                 <div class="ripple-liquid coin-flex">
                     <p>XRP</p>
-                    <p>32%</p>
+                    <p class="ripple liquid-coin-price">$0</p>
                 </div>
                 <div class="bitcoincash-liquid coin-flex">
                     <p>BCH</p>
-                    <p>32%</p>
+                    <p class="bitcoin-cash liquid-coin-price">$0</p>
                 </div>
                 <div class="polkadot-liquid coin-flex">
                     <p>DOT</p>
-                    <p>32%</p>
+                    <p class="polkadot liquid-coin-price">$0</p>
                 </div>
                 <div class="chainlink-liquid coin-flex">
                     <p>LINK</p>
-                    <p>32%</p>
+                    <p class="chainlink liquid-coin-price">$0</p>
                 </div>
                 <div class="dai-liquid coin-flex">
                     <p>DAI</p>
-                    <p>32%</p>
+                    <p class="dai liquid-coin-price">$0</p>
                 </div>
                 <div class="filecoin-liquid coin-flex">
                     <p>FIL</p>
-                    <p>32%</p>
+                    <p class="filecoin liquid-coin-price">$0</p>
                 </div>
                 <div class="binancecoin-liquid coin-flex">
                     <p>BNB</p>
-                    <p>32%</p>
+                    <p class="binancecoin liquid-coin-price">$0</p>
                 </div>
                 <div class="binanceeth-liquid coin-flex">
                     <p>BETH</p>
-                    <p>32%</p>
+                    <p class="binance-eth liquid-coin-price">$0</p>
                 </div>
                 <div class="cardano-liquid coin-flex">
                     <p>ADA</p>
-                    <p>32%</p>
+                    <p class="cardano liquid-coin-price">$0</p>
                 </div>
                 <div class="vai-liquid coin-flex">
                     <p>VAI</p>
-                    <p>32%</p>
+                    <p class="vai liquid-coin-price">$0</p>
                 </div>
             </div>
 
@@ -501,14 +504,16 @@
                     </div>
                 </div>
             </div>
+            <div class="ads">
+                
+            </div>
         </section>
-        
     </main>
     
     
     <footer>
         <hr>
-        <label for="">Powered by CoinGecko API</label>
+        <p>Powered by CoinGecko API</p>
     </footer>
 </body>
 </html>

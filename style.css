@@ -8,9 +8,6 @@
 body {
     background-color: #090d27;
     color: #fff;
-    margin: 0 auto;
-    max-width: 1600px;
-    width: 90%;
 }
 
 h1 {
@@ -40,6 +37,9 @@ header {
     align-items: center;
 	justify-content: space-between;
     height: 5em;
+    max-width: 1500px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .nav-links {
@@ -74,6 +74,9 @@ header {
     padding: 3em;
     margin: 2em 0;
     align-items: baseline;
+    max-width: 1500px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .total-amounts h2 {
@@ -98,6 +101,12 @@ header {
 
 /* Calculator */
 
+.ads {
+    width: 160px;
+    height: 600px;
+    background-color:wheat;
+}
+
 .coin-flex {
     display: flex;
     background-color: #181c3a;
@@ -109,7 +118,7 @@ header {
 }
 
 .calc-containers {
-    width: 38.3%;
+    width: 28%;
     background-color: #181c3a;
     border-radius: 30px;
     padding: 2em 0;
@@ -128,8 +137,11 @@ header {
 }
 
 .calculator {
+    width: 99%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .asset-liquid {
