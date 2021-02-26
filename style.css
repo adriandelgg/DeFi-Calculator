@@ -99,6 +99,11 @@ header {
     font-size: 2rem;
 }
 
+.borrow-balance-error {
+    color: rgb(250, 65, 65);
+    font-size: 1rem;
+}
+
 /* Calculator */
 
 .ads {
@@ -144,7 +149,7 @@ header {
     
 }
 
-.asset-liquid {
+#asset-liquid {
     width: 20%;
     background-color: #181c3a;
     border-radius: 30px;
