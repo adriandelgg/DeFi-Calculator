@@ -173,6 +173,7 @@ header {
 
 .coin-and-ticker input {
     margin-left: auto;
+    width: 8.5em;
 }
 
 .total-coin-price {
