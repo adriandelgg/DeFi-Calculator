@@ -56,7 +56,7 @@ const calculateTotalForSupplyBorrow = (e, side) => {
                 borrowSideTotal.innerHTML = 'Total: $'+ total.toLocaleString('en');
                 borrowSideCurrentPrice.innerHTML = '$' + currentPrice.toLocaleString('en');
             }
-            totalSupply(side);
+            totalSupplyBorrow();
         });
 };
 
@@ -73,7 +73,7 @@ for (let i = 0; i < borrowSide.length; i++) {
 };
 
 // Calculates the total Supply & Borrow Balance
-const totalSupply = () => {
+const totalSupplyBorrow = () => {
     let supplyTotal = 0;
     let borrowTotal = 0;
     
@@ -120,16 +120,20 @@ function calcPercentageUsedOfAvailableCredit(borrowTotal, supplyTotal) {
         } else {
             borrowBalanceExceedsAvailableCreditError(2);
         }
-        calcLiquidationEventAmount(borrowTotal, amountUsedTotal);
+        calcLiquidationEventAmount(borrowTotal, amountUsedTotal, supplyTotal);
     }
 }  
 
-const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit) => {
+const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit, supplyTotal) => {
     let liquidEvent = document.getElementById('liquid-event');
     liquidEvent.innerHTML = '$' + (Math.round( ((borrowTotal / 0.6) * 100)) / 100).toLocaleString('en'); // Calculates Liquid Event
 
     let liquidPercentage = document.getElementById('liquid-percent');
     liquidPercentage.innerHTML = Math.round( ((1 - amountUsedOfAvailableCredit) * 100) * 1000) / 1000 + '%'; // Calculates Liquid Percentage
+    
+    const liquidInDollar = document.getElementById('other-liquid');
+    let liquidPercentTotal = 1 - amountUsedOfAvailableCredit;
+    liquidInDollar.innerHTML = (Math.round( (supplyTotal * liquidPercentTotal) * 100) / 100).toLocaleString('en');
     
     calcPerCoinLiquidationPrice(amountUsedOfAvailableCredit);
 };
@@ -161,7 +165,5 @@ const borrowBalanceExceedsAvailableCreditError = num => {
         borrowBalanceText[0].classList.add('borrow-balance-error');
         borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
         borrowBalanceText[1].style.color = 'red';
-        // document.getElementById('available-credit').innerHTML = '$0';
-        // document.getElementById('amount-used-ac').innerHTML = '';
     }
 }
