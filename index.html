@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <script data-ad-client="ca-pub-5308141991739703" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title>Liquidation Calculator</title>
@@ -32,21 +33,23 @@
         <!-- Totals -->
         <section class="total-amounts flex">
             <div class="supply-balance">
+                <br>
                 <h2>Supply Balance</h2>
                 <h3 id="total-supply">$0</h3>
             </div>
             <div class="middle-totals">
                 <h2>Available Credit</h2>
                 <h3 id="available-credit">$0</h3>
-                
                 <p>Credit Used: <span id="amount-used-ac">0%</span></p>
-                <h2>Liquidation Event</h2>
+                
+                <h2 class="liquid-event-text">Liquidation Event</h2>
                 <h3 id="liquid-event">$0</h3>
                 <!-- Percentage Bar -->
                 <p>% till Liquidation: <span id="liquid-percent">0%</span></p>
                 <p>$ till Liquidation: $<span id="other-liquid">0</span></p>
             </div>
             <div class="borrow-balance">
+                <br>
                 <h2 class="borrow-balance-text">Borrow Balance</h2>
                 <h3 id="total-borrow" class="borrow-balance-text">$0</h3>
             </div>

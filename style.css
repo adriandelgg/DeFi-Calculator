@@ -8,20 +8,24 @@
 body {
     background-color: #090d27;
     color: #fff;
-    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 1em;
+    margin-top: .2em;
+    animation: fadeHeader ease 1.5s;
+    font-family: 'Crimson Text', serif;
 }
 
 h2 {
-    /* font-size: 2rem; */
     text-align: center;
+    font-family: 'Crimson Text', serif;
 }
 
 h3 {
-
+    font-family: 'Crimson Text', serif;
 }
 
 .flex {
@@ -41,6 +45,8 @@ header {
     max-width: 1250px;
     width: 78%;
     margin: 0 auto;
+    animation: fadeHeader ease 1.5s;
+    font-family: 'Crimson Text', serif;
 }
 
 .nav-links {
@@ -62,8 +68,14 @@ header {
 }
 
 .nav-link a:hover {
-	color:rgb(195, 23, 195);
+	color:#f7ba4f;
 	transition: color .3s;
+}
+
+@keyframes fadeHeader {
+    0% {
+        opacity: 0;
+    }
 }
 
 /* Main */
@@ -72,33 +84,59 @@ header {
     text-align: center;
     justify-content: space-around;
     margin: 0 auto;
-    /* padding: 1em 1.5em; */
-    /* margin: 2em 0; */
+    padding: 1em 0;
     align-items: baseline;
     max-width: 1275px;
     width: 78.5%;
     margin: 0 auto;
+    animation: fadeIn 1.5s;
 }
 
 .total-amounts h2 {
     /* padding-top: .5em; */
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .total-amounts h3 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+}
+
+.supply-balance,
+.borrow-balance {
+    line-height: 1.5;
+}
+
+.supply-balance {
+    margin-left: 1.5em;
+}
+
+.borrow-balance {
+    margin-right: 1.5em;
 }
 
 .middle-totals {
-    background: linear-gradient(rgb(242, 194, 101), rgb(247, 180, 79));
+    background: linear-gradient(-45deg,#f8b94c, #e2c167);
     border-radius: 30px;
-    padding: 1.5em 5em;
+    padding: 1.5em 4.5em;
+}
+
+.liquid-event-text {
+    margin-top: .4em;
 }
 
 .borrow-balance-error {
     color: rgb(250, 65, 65);
     font-size: 1rem;
+    line-height: 1.2;
 }
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+
 
 /* Calculator */
 
@@ -106,7 +144,7 @@ header {
     width: 10%;
     height: 600px;
     position: absolute;
-    background-color: wheat;
+    /* background-color: #181c3a;; */
     left: 0;
 }
 
@@ -114,7 +152,7 @@ header {
     width: 10%;
     height: 600px;
     position: absolute;
-    background-color: wheat;
+    /* background-color: #181c3a;; */
     right: 0;
 }
 
@@ -123,6 +161,7 @@ header {
     background-color: #181c3a;
     border-radius: 30px;
     padding: 2em 0;
+    animation: fadeInUp 1.5s;
 }
 
 .calculator {
@@ -154,7 +193,6 @@ header {
 .coin-flex {
     display: flex;
     align-items: center;
-    /* border: 1px solid white; */
     height: 3em;
     justify-content: space-around;
     margin-bottom: .5em;
@@ -169,6 +207,8 @@ header {
 
 .coin-and-ticker p {
     margin-left: .8em;
+    font-size: .85rem;
+    font-family: 'Crimson', sans-serif;
 }
 
 .coin-and-ticker input {
@@ -179,7 +219,7 @@ header {
 .total-coin-price {
     width: 8.3em;
     line-height: 1.4;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .liquid {
@@ -193,11 +233,38 @@ header {
 }
 
 .supply {
-    
+    animation: fadeInRight 1.5s;
 }
 
 .borrow {
-    
+    animation: fadeInLeft 1.5s;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
 }
 
 /* Footer */
+
+footer {
+    max-width: 1275px;
+    width: 78.5%;
+    margin: 0 auto;
+}
