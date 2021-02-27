@@ -73,78 +73,51 @@ for (let i = 0; i < borrowSide.length; i++) {
 };
 
 // Calculates the total Supply & Borrow Balance
-const totalSupply = side => {
+const totalSupply = () => {
     let supplyTotal = 0;
     let borrowTotal = 0;
     
-    if (side === 'supply') {
-        total = getData()
-            .then(json => {
-                for (let i = 0; i < supplySide.length; i++) {
-                    for (const coin in json) {
-                        if (supplySide[i].className == coin) {
-                            supplyTotal += supplySide[i].value * json[coin].usd;
-                        }
+    total = getData()
+        .then(json => {
+            for (let i = 0; i < supplySide.length; i++) {
+                for (const coin in json) {
+                    if (supplySide[i].className == coin) {
+                        supplyTotal += supplySide[i].value * json[coin].usd;
+                    }
+                    if (borrowSide[i].className == coin) {
+                        borrowTotal += borrowSide[i].value * json[coin].usd;
                     }
                 }
-                document.getElementById('total-supply').innerHTML = '$' + (Math.round(supplyTotal * 100) / 100).toLocaleString('en');
-                calculateAvailableCredit(supplyTotal);
-                calcPercentageUsedOfAvailableCredit();
-            });
+            }
+            document.getElementById('total-supply').innerHTML = '$' + (Math.round(supplyTotal * 100) / 100).toLocaleString('en');
+            document.getElementById('total-borrow').innerHTML = '$' + (Math.round(borrowTotal * 100) / 100).toLocaleString('en');
+            
+            calcPercentageUsedOfAvailableCredit(borrowTotal, supplyTotal);
+        });
     
-    } else if (side === 'borrow') {
-        total = getData()
-            .then(json => {
-                for (let i = 0; i < borrowSide.length; i++) {
-                    for (const coin in json) {
-                        if (borrowSide[i].className == coin) {
-                            borrowTotal += borrowSide[i].value * json[coin].usd;
-                        }
-                    }
-                }
-                document.getElementById('total-borrow').innerHTML = '$' + (Math.round(borrowTotal * 100) / 100).toLocaleString('en');
-                calcPercentageUsedOfAvailableCredit();
-            });
-    }
-    return borrowTotal;
-};
-
-
-// Calculates Total Available Credit
-const calculateAvailableCredit = supplyTotal => {
-    const creditAvailable = document.getElementById('available-credit');
-    creditAvailable.innerHTML = '$' + (Math.round((supplyTotal * 0.6) * 100) / 100).toLocaleString('en');
 };
 
 // Calculates the Percentage used of Total Available Credit
-function calcPercentageUsedOfAvailableCredit() {
+function calcPercentageUsedOfAvailableCredit(borrowTotal, supplyTotal) {
+    const creditAvailable = document.getElementById('available-credit'); 
+    creditAvailable.innerHTML = '$' + (Math.round((supplyTotal * 0.6) * 100) / 100).toLocaleString('en');
+    const availableCredit = supplyTotal * 0.6;
     const amountUsedOfCredit = document.getElementById('amount-used-ac'); // Percentage Amount
-    const borrowBalanceText = document.getElementsByClassName('borrow-balance-text');
-    let creditAvailable = document.getElementById('available-credit'); // Total Credit Available Number
-    let borrowTotal = document.getElementById('total-borrow');
-    creditAvailable = parseFloat(creditAvailable.innerHTML.replace('$','').replace(',','')); // Takes Available Credit amount & converts to a float
-    borrowTotal = parseFloat(borrowTotal.innerHTML.replace('$','').replace(',',''));// Turns Borrow Balance to a float
     
-    if (borrowTotal !== 0 && creditAvailable !== 0) { // Checks to make sure 0 / 0 is NOT NaN
-
-        const amountUsedTotalRounded = Math.round( ((borrowTotal / creditAvailable) * 100) * 1000) / 1000; // Amount Used of Available Credit in %
-        const amountUsedTotal = borrowTotal / creditAvailable;
-
+    
+    if (borrowTotal !== 0 && supplyTotal !== 0) { // Checks to make sure 0 / 0 is NOT NaN
+        
+        const amountUsedTotalRounded = Math.round( ((borrowTotal / availableCredit) * 100) * 1000) / 1000; // Amount Used of Available Credit in %
+        const amountUsedTotal = borrowTotal / availableCredit;
+        
         // Adds AC % and reverts back to default if else error below was triggered
-        if (borrowTotal != 0 && creditAvailable > borrowTotal) {
+        if (borrowTotal != 0 && availableCredit > borrowTotal) {
             amountUsedOfCredit.innerHTML = amountUsedTotalRounded + '%';
-            // borrowBalanceText[0].innerHTML = "Borrow Balance";
-            // borrowBalanceText[0].classList.remove('borrow-balance-error');
-            // borrowBalanceText[1].style.color = '';
+        
             borrowBalanceExceedsAvailableCreditError(1);
         
         // Creates a visual error to let user know Borrow Balance CAN'T exceed Available Credit
         } else {
-            // borrowBalanceText[0].classList.add('borrow-balance-error');
-            // borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
-            // borrowBalanceText[1].style.color = 'red';
-            // document.getElementById('available-credit').innerHTML = '$0';
-            // document.getElementById('amount-used-ac').innerHTML = '';
             borrowBalanceExceedsAvailableCreditError(2);
         }
         calcLiquidationEventAmount(borrowTotal, amountUsedTotal);
@@ -158,11 +131,11 @@ const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit) =>
     let liquidPercentage = document.getElementById('liquid-percent');
     liquidPercentage.innerHTML = Math.round( ((1 - amountUsedOfAvailableCredit) * 100) * 1000) / 1000 + '%'; // Calculates Liquid Percentage
     
-    calcAssetLiquidationPrice(amountUsedOfAvailableCredit);
+    calcPerCoinLiquidationPrice(amountUsedOfAvailableCredit);
 };
 
-const calcAssetLiquidationPrice = amountUsedOfAvailableCredit => {
-    console.log(amountUsedOfAvailableCredit)
+const calcPerCoinLiquidationPrice = amountUsedOfAvailableCredit => {
+    
     const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
     getData()
         .then(prices => {
@@ -178,7 +151,7 @@ const calcAssetLiquidationPrice = amountUsedOfAvailableCredit => {
 
 const borrowBalanceExceedsAvailableCreditError = num => {
     const borrowBalanceText = document.getElementsByClassName('borrow-balance-text');
-    // const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
+
     if (num === 1) {
         borrowBalanceText[0].innerHTML = "Borrow Balance";
         borrowBalanceText[0].classList.remove('borrow-balance-error');
@@ -190,11 +163,5 @@ const borrowBalanceExceedsAvailableCreditError = num => {
         borrowBalanceText[1].style.color = 'red';
         // document.getElementById('available-credit').innerHTML = '$0';
         // document.getElementById('amount-used-ac').innerHTML = '';
-        
-        // for (let i = 0; i < assetLiquid.length; i++) {
-        //     assetLiquid[i].innerHTML = '0%';
-        // }
-
     }
-
 }
