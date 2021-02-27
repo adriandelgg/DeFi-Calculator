@@ -8,7 +8,7 @@
 body {
     background-color: #090d27;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
 }
 
 h1 {
@@ -38,8 +38,8 @@ header {
     align-items: center;
 	justify-content: space-between;
     height: 5em;
-    max-width: 1500px;
-    width: 90%;
+    max-width: 1250px;
+    width: 78%;
     margin: 0 auto;
 }
 
@@ -72,11 +72,11 @@ header {
     text-align: center;
     justify-content: space-around;
     margin: 0 auto;
-    padding: 3em;
-    margin: 2em 0;
+    /* padding: 1em 1.5em; */
+    /* margin: 2em 0; */
     align-items: baseline;
-    max-width: 1500px;
-    width: 90%;
+    max-width: 1275px;
+    width: 78.5%;
     margin: 0 auto;
 }
 
@@ -95,11 +95,6 @@ header {
     padding: 1.5em 5em;
 }
 
-
-.supply-balance h2 {
-    font-size: 2rem;
-}
-
 .borrow-balance-error {
     color: rgb(250, 65, 65);
     font-size: 1rem;
@@ -107,31 +102,93 @@ header {
 
 /* Calculator */
 
-.ads {
-    width: 160px;
+#google1 {
+    width: 10%;
     height: 600px;
-    background-color:wheat;
+    position: absolute;
+    background-color: wheat;
+    left: 0;
 }
 
-.coin-flex {
-    display: flex;
-    background-color: #181c3a;
-    border-radius: 30px;
-    align-items: center;
-    /* border: 1px solid white; */
-    justify-content: space-around;
-    margin: .5em 0;
+#google2 {
+    width: 10%;
+    height: 600px;
+    position: absolute;
+    background-color: wheat;
+    right: 0;
 }
 
-.calc-containers {
-    width: 28%;
+#asset-liquid {
+    width: 20%;
     background-color: #181c3a;
     border-radius: 30px;
     padding: 2em 0;
 }
 
-.calc-containers h2 {
-    padding-bottom: 1em;
+.calculator {
+    width: 80%;
+    max-width: 1300px;
+    margin: 1.5em auto 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.calculator h2 {
+    height: 3em;
+}
+
+.actual-calculator {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.calc-containers {
+    width: 37%;
+    background-color: #181c3a;
+    border-radius: 30px;
+    padding: 2em 1em;
+}
+
+.coin-flex {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid white; */
+    height: 3em;
+    justify-content: space-around;
+    margin-bottom: .5em;
+}
+
+.coin-and-ticker {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 13em;
+}
+
+.coin-and-ticker p {
+    margin-left: .8em;
+}
+
+.coin-and-ticker input {
+    margin-left: auto;
+}
+
+.total-coin-price {
+    width: 8.3em;
+    line-height: 1.4;
+    font-size: .9rem;
+}
+
+.liquid {
+    justify-content: flex-start;
+    margin: auto;
+    width: 9em;
+}
+
+.liquid-coin-price {
+    margin-left: auto;
 }
 
 .supply {
@@ -140,21 +197,6 @@ header {
 
 .borrow {
     
-}
-
-.calculator {
-    width: 99%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-#asset-liquid {
-    width: 20%;
-    background-color: #181c3a;
-    border-radius: 30px;
-    padding: 2em 0;
 }
 
 /* Footer */
