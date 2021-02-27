@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&amp;display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Liquidation Calculator</title>
 </head>
@@ -36,11 +37,12 @@
             <div class="middle-totals">
                 <h2>Available Credit</h2>
                 <h3 id="available-credit">$0</h3>
-                <p id="amount-used-ac"></p>
+                
+                <p>Credit Used: <span id="amount-used-ac">0%</span></p>
                 <h2>Liquidation Event</h2>
+                <h3 id="liquid-event">$0</h3>
                 <!-- Percentage Bar -->
-                <p id="liquid-event">$0</p>
-                <p id="liquid-percent">0%</p>
+                <p>% till Liquidation: <span id="liquid-percent">0%</span></p>
                 <p id="other-liquid"></p>
             </div>
             <div class="borrow-balance">
