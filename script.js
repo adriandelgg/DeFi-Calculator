@@ -156,12 +156,13 @@ const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit) =>
     liquidEvent.innerHTML = '$' + (Math.round( ((borrowTotal / 0.6) * 100)) / 100).toLocaleString('en'); // Calculates Liquid Event
 
     let liquidPercentage = document.getElementById('liquid-percent');
-    liquidPercentage.innerHTML = Math.round((1 - amountUsedOfAvailableCredit) * 1000) / 1000; // Calculates Liquid Percentage
+    liquidPercentage.innerHTML = Math.round( ((1 - amountUsedOfAvailableCredit) * 100) * 1000) / 1000 + '%'; // Calculates Liquid Percentage
     
     calcAssetLiquidationPrice(amountUsedOfAvailableCredit);
 };
 
 const calcAssetLiquidationPrice = amountUsedOfAvailableCredit => {
+    console.log(amountUsedOfAvailableCredit)
     const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
     getData()
         .then(prices => {
@@ -187,8 +188,8 @@ const borrowBalanceExceedsAvailableCreditError = num => {
         borrowBalanceText[0].classList.add('borrow-balance-error');
         borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
         borrowBalanceText[1].style.color = 'red';
-        document.getElementById('available-credit').innerHTML = '$0';
-        document.getElementById('amount-used-ac').innerHTML = '';
+        // document.getElementById('available-credit').innerHTML = '$0';
+        // document.getElementById('amount-used-ac').innerHTML = '';
         
         // for (let i = 0; i < assetLiquid.length; i++) {
         //     assetLiquid[i].innerHTML = '0%';
