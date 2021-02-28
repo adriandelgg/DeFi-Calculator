@@ -70,10 +70,20 @@ header {
     font-size: 1rem;
 }
 
+#donate-button:visited {
+    background: #f7bb50;
+	color: #090d27;
+}
+
 #donate-button:hover {
     transition: background .75s;
     background:#76b800;
     color: white;
+}
+
+#donate-button:active {
+    background: #f7bb50;
+    color: #090d27;
 }
 
 /* .nav-links {
@@ -357,6 +367,7 @@ footer {
 
     .calculator {
         width: 99%;
+        margin-top: .7em;
     }
 
     footer {
