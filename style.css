@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     background-color: #090d27;
     color: #fff;
@@ -20,11 +24,13 @@ h1 {
 }
 
 h2 {
+    font-size: 1.8rem;
     text-align: center;
     font-family: 'Crimson Text', serif;
 }
 
 h3 {
+    font-size: 1.5rem;
     font-family: 'Crimson Text', serif;
 }
 
@@ -111,15 +117,6 @@ header {
     animation: fadeIn 1.5s;
 }
 
-.total-amounts h2 {
-    /* padding-top: .5em; */
-    font-size: 1.8rem;
-}
-
-.total-amounts h3 {
-    font-size: 1.5rem;
-}
-
 .supply-balance,
 .borrow-balance {
     line-height: 1.5;
@@ -145,7 +142,6 @@ header {
 
 .borrow-balance-error {
     color: rgb(250, 65, 65);
-    font-size: 1rem;
     line-height: 1.2;
 }
 
@@ -242,13 +238,9 @@ header {
 }
 
 .liquid {
-    justify-content: flex-start;
+    justify-content: space-between;
     margin: 0 auto .5em;
     width: 9em;
-}
-
-.liquid-coin-price {
-    margin-left: auto;
 }
 
 .supply {
@@ -315,4 +307,84 @@ footer {
 #creator {
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+@media (max-width: 1240px) {
+    header {
+        width: 90%;
+    }
+
+    .total-amounts {
+        width: 95%;
+    }
+
+    .calculator {
+        width: 97%;
+    }
+
+    footer {
+        width: 95%;
+    }
+
+    .coin-and-ticker input {
+        width: 5em;
+        margin-right: 1em;
+    }
+}
+
+@media (max-width: 940px) {
+    header {
+        width: 95%;
+    }
+
+    .total-amounts {
+        width: 97%;
+    }
+
+    .calculator {
+        width: 99%;
+    }
+
+    footer {
+        width: 96%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: .8rem;
+    }
+
+    .middle-totals {
+        background: linear-gradient(-45deg,#f8b94c, #e2c167);
+        border-radius: 30px;
+        padding: 1em 3em;
+    }
+
+    .coin-and-ticker input {
+        width: 4em;
+    }
+
+    #asset-liquid {
+        width: 22%;
+    }
+    
+    .liquid {
+        justify-content: center;
+    }
+
+    .liquid-coin-price {
+        padding: 0 1em;
+        margin-left: auto;
+    }
+
+    .coin-flex {
+        height: 4em;
+    }
 }
