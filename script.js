@@ -127,6 +127,7 @@ function calcPercentageUsedOfAvailableCredit(borrowTotal, supplyTotal) {
     }
 }  
 
+// Calculates Liquidation Event & Liquidation percentage amounts
 const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit, supplyTotal) => {
     let liquidEvent = document.getElementById('liquid-event');
     liquidEvent.innerHTML = '$' + (Math.round( ((borrowTotal / 0.6) * 100)) / 100).toLocaleString('en'); // Calculates Liquid Event
@@ -141,6 +142,7 @@ const calcLiquidationEventAmount = (borrowTotal, amountUsedOfAvailableCredit, su
     calcPerCoinLiquidationPrice(amountUsedOfAvailableCredit);
 };
 
+//Calculates the Liquidation price per Coin
 const calcPerCoinLiquidationPrice = amountUsedOfAvailableCredit => {
     
     const assetLiquid = document.getElementById('asset-liquid').querySelectorAll('.liquid-coin-price');
@@ -156,6 +158,7 @@ const calcPerCoinLiquidationPrice = amountUsedOfAvailableCredit => {
         });
 };
 
+// Make Borrow Balance Red w/ Error Message if it exceeds Available Credit
 const borrowBalanceExceedsAvailableCreditError = num => {
     const borrowBalanceText = document.getElementsByClassName('borrow-balance-text');
 
@@ -169,14 +172,4 @@ const borrowBalanceExceedsAvailableCreditError = num => {
         borrowBalanceText[1].classList.add('borrow-balance-error');
         borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
     }
-};
-
-const updateAllValuesEveryMinute = () => {
-    //1. Grab all values in each input field.
-    //2. Multiply those value by the current price of the coin
-    //3. Add all the totals to the right side of them.
-    //4. Add all the coin totals to the supply/borrow balances total.
-    //5. Execute the other functions
-
-
 };
