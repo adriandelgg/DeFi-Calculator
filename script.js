@@ -36,13 +36,14 @@ const startingCoinPrices = coinAPI => {
 startingCoinPrices(getData());
 
 // Calculates & changes the HTML for Total & Current Price of Supply and Borrow Sides
-const calculateTotalForSupplyBorrow = (e, side) => {
-    getCoinPrice(e.target.className)
+const calculateTotalForSupplyBorrow = (event, side) => {
+    startingCoinPrices(getData());
+    getCoinPrice(event.target.className)
         .then(value => { // Returns API Price
-            total = value * e.target.value;
-            totalAmount = e.target.className + 'total';
+            total = value * event.target.value; // Multiplies the input value by the coin price
+            totalAmount = event.target.className + 'total';
             currentPrice = value;
-            currentPriceShown = e.target.className + 'price';
+            currentPriceShown = event.target.className + 'price';
             
             if (side === 'supply') {
                 const supplySideTotal = document.getElementById('supply-side').querySelector('.' + totalAmount);
@@ -60,16 +61,18 @@ const calculateTotalForSupplyBorrow = (e, side) => {
         });
 };
 
+
+
 // Gets input value of all inputs on Supply side
 const supplySide = document.getElementById('supply-side').getElementsByTagName("input");
 for (let i = 0; i < supplySide.length; i++) {
-    supplySide[i].onchange = e => calculateTotalForSupplyBorrow(e, 'supply'); 
+    supplySide[i].onchange = event => calculateTotalForSupplyBorrow(event, 'supply'); 
 };
 
 // Gets input value of all inputs on Borrow Side
 const borrowSide = document.getElementById('borrow-side').getElementsByTagName("input");
 for (let i = 0; i < borrowSide.length; i++) {
-    borrowSide[i].onchange = e => calculateTotalForSupplyBorrow(e, 'borrow');
+    borrowSide[i].onchange = event => setInterval(calculateTotalForSupplyBorrow(event, 'borrow'), 10000);
 };
 
 // Calculates the total Supply & Borrow Balance
@@ -166,4 +169,14 @@ const borrowBalanceExceedsAvailableCreditError = num => {
         borrowBalanceText[1].classList.add('borrow-balance-error');
         borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
     }
-}
+};
+
+const updateAllValuesEveryMinute = () => {
+    //1. Grab all values in each input field.
+    //2. Multiply those value by the current price of the coin
+    //3. Add all the totals to the right side of them.
+    //4. Add all the coin totals to the supply/borrow balances total.
+    //5. Execute the other functions
+
+
+};

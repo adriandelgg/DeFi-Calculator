@@ -41,7 +41,9 @@ h3 {
     align-items: center;
 }
 
-/* Header */
+/*  ==============
+        Header
+    ============== */
 
 header {
     display: flex;
@@ -103,7 +105,9 @@ header {
     }
 }
 
-/* Main */
+/*  ==============
+        Main
+    ============== */
 
 .total-amounts {
     text-align: center;
@@ -152,8 +156,9 @@ header {
     }
 }
 
-
-/* Calculator */
+/*  ==============
+      Calculator
+    ============== */
 
 #google1 {
     width: 10%;
@@ -272,7 +277,9 @@ header {
     }
 }
 
-/* Footer */
+/*  ==============
+        Footer
+    ============== */
 
 footer {
     max-width: 1275px;
@@ -284,6 +291,7 @@ footer {
     line-height: 2;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #donate {
@@ -309,6 +317,11 @@ footer {
     font-size: 1.2rem;
 }
 
+/*  ==============
+    Media Queries
+    ============== */
+
+/* Low res Laptop */
 @media (max-width: 1240px) {
     header {
         width: 90%;
@@ -332,6 +345,7 @@ footer {
     }
 }
 
+/* Tablet */
 @media (max-width: 940px) {
     header {
         width: 95%;
@@ -377,14 +391,136 @@ footer {
     
     .liquid {
         justify-content: center;
+        width: 5em;
     }
 
     .liquid-coin-price {
         padding: 0 1em;
-        margin-left: auto;
+        /* margin-left: auto; */
+        text-align: right;
+    }
+}
+
+/* Breakpoint for Footer */
+@media (max-width: 774px) {
+    .contact img {
+        width: 30px;
     }
 
-    .coin-flex {
-        height: 4em;
+    #donate {
+        font-size: 1.1rem;
+    }
+
+    #creator {
+        font-size: 1.1rem;
+    }
+}
+
+/* Smaller Tablet */
+@media (max-width: 720px) {
+    .middle-totals {
+        padding: .5em 1em;
+    }
+    
+    .calculator {
+    
+    }
+
+    .supply {
+        width: 70%;
+    }
+
+    #asset-liquid {
+        width: 25%;
+    }
+
+    .borrow {
+        margin-top: .7em;
+        width: 97%;
+    }
+
+    .liquid-coin-price {
+        width: 100%;
+        text-align: right;
+    }
+
+    .contact {   
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .contact a {
+        padding: .3em;
+    }
+}
+
+/* Mobile */
+@media (max-width: 470px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-container img {
+        margin-left: .7em;
+    }
+
+    .total-amounts {
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .supply-balance,
+    .borrow-balance {
+        margin: 0;
+        padding-bottom: 1em;
+    }
+
+    .middle-totals {
+        padding: 1em 3em;
+    }
+
+
+    .supply {
+        width: 97%;
+    }
+    
+    .calculator {
+        margin-top: .5em;
+    }
+
+    #asset-liquid {
+        margin-top: .5em;
+        width: 97%;
+    }
+
+    #asset-liquid .coin-flex {
+        height: 1em;
+    }
+
+    .liquid {
+        width: 9em;
+    }
+    
+    .liquid-coin-price {
+        margin: 0 auto;
+        text-align: right;
+    }
+}
+
+/* Fixing footer for small phones */
+@media (max-width: 401px) {
+    footer p {
+        font-size: .6rem;
+    }
+
+    #copyright {
+        font-size: 1rem;
+    }
+
+    .contact {   
+        margin: 0 auto;
+        text-align: center;
     }
 }
