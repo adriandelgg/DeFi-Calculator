@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <script data-ad-client="ca-pub-5308141991739703" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJGGB5JW13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DJGGB5JW13');
+    </script>
     <title>Liquidation Calculator</title>
 </head>
 <body>
@@ -18,11 +27,12 @@
             <img src="img/Venus Logo.png" alt="Venus Logo">
         </div>
         <nav>
-            <ul class="nav-links">
-                <li class="nav-link"><a href="#">About</a></li>
-                <li class="nav-link"><a href="#">Lorem</a></li>
-                <li class="nav-link"><a href="#">Contact</a></li>
-            </ul>
+            <!-- <ul class="nav-links"> -->
+                <!-- <li class="nav-link"><a href="#"></a></li> -->
+                <!-- <li class="nav-link"><a href="#"></a></li> -->
+                <!-- <li class="nav-link"><a href="#">Contact</a></li> -->
+            <!-- </ul> -->
+            <a href="#donate"><button id="donate-button">Donate</button></a>
         </nav>
     </header>
     
@@ -435,7 +445,7 @@
                         <div class="total-coin-price">
                             <p class="binance-usdtotal">Total: $0</p>
                             <hr>
-                            <p class="binance-usdprice"></p>
+                            <p>Price: <span class="binance-usdprice"></span></p>
                         </div>
                     </div>
                     <div class="ethereum-supply coin-flex">
@@ -593,7 +603,31 @@
     
     <footer>
         <hr>
-        <p>Powered by CoinGecko API</p>
+        <br>
+        <div class="donation">
+            <div>
+                <p id="donate">Donate</p>
+                </p>
+                <p>(BSC Smart Chain): 0xE2b2a4cDFb62D67dC31540defE31B3b9AC4ce55F</p>
+                <p>(ERC20): 0x1E1Edc590CC3AC19C0A13b65B3174b82997869a4</p>
+            </div>
+            <div class="contact">
+                <div class="adrian">
+                    <p id="creator">Created by Adrian Delgado</p>
+                    <p>Need a website? Contact me!</p>
+                    <a href="mailto:adriandelgadoc1@gmail.com" target="_blank"><img src="img/gmail.svg" alt="Gmail Icon" width="55"></a>
+                    <a href="https://www.twitter.com/cloudcoding_" target="_blank">
+                        <img src="img/twitter.png" alt="Twitter logo" width="50"></a>
+                    <a href="http://www.instagram.com/cloudcoding" target="_blank" rel="noopener noreferrer">
+                        <img src="img/camera.png" alt="Instagram logo" width="50"></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <p id="copyright">Copyright © XVS Liquidation Calculator 2021</p>
+        <br>
     </footer>
 </body>
 </html>

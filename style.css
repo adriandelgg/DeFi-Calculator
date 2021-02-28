@@ -49,7 +49,26 @@ header {
     font-family: 'Crimson Text', serif;
 }
 
-.nav-links {
+#donate-button {
+    background: #f7bb50;
+	color: #090d27;
+	border: none;
+	border-radius: 20px;
+	width: 6em;
+	height: 2em;
+	margin-right: 20px;
+	cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#donate-button:hover {
+    transition: background .75s;
+    background:#76b800;
+    color: white;
+}
+
+/* .nav-links {
 	display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +89,7 @@ header {
 .nav-link a:hover {
 	color:#f7ba4f;
 	transition: color .3s;
-}
+} */
 
 @keyframes fadeHeader {
     0% {
@@ -224,7 +243,7 @@ header {
 
 .liquid {
     justify-content: flex-start;
-    margin: auto;
+    margin: 0 auto .5em;
     width: 9em;
 }
 
@@ -266,5 +285,34 @@ header {
 footer {
     max-width: 1275px;
     width: 78.5%;
-    margin: 0 auto;
+    margin: 2.5em auto 0;
+}
+
+.donation {
+    line-height: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+#donate {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+#copyright {
+    text-align: right;
+    font-size: .9rem;
+}
+
+.contact {
+    text-align: right;
+}
+
+.contact a {
+    padding-left: 1em;
+}
+
+#creator {
+    font-weight: 600;
+    font-size: 1.2rem;
 }

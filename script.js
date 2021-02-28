@@ -159,11 +159,11 @@ const borrowBalanceExceedsAvailableCreditError = num => {
     if (num === 1) {
         borrowBalanceText[0].innerHTML = "Borrow Balance";
         borrowBalanceText[0].classList.remove('borrow-balance-error');
-        borrowBalanceText[1].style.color = '';
+        borrowBalanceText[1].classList.remove('borrow-balance-error');
     
     } else {
         borrowBalanceText[0].classList.add('borrow-balance-error');
+        borrowBalanceText[1].classList.add('borrow-balance-error');
         borrowBalanceText[0].innerHTML = "Can't exceed <br>Available Credit!";
-        borrowBalanceText[1].style.color = 'red';
     }
 }
